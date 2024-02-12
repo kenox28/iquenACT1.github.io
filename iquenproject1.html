@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color: rgb(69, 176, 210);
+    }
+    body {
+      height: 100%;
+      display: flex;
+      background-size: cover;
+      gap: 50px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+    .box {
+      backdrop-filter: blur(10px);
+      margin-top: 120px;
+      height: 400px;
+      width: 400px;
+      display: flex;
+      border-radius: 15px;
+      box-shadow: rgba(3, 245, 233, 0.25) 0px 54px 55px,
+        rgba(4, 191, 233, 0.12) 0px -12px 30px,
+        rgba(8, 181, 239, 0.12) 0px 4px 6px,
+        rgba(4, 208, 249, 0.17) 0px 12px 13px,
+        rgba(4, 187, 238, 0.09) 0px -3px 5px;
+      border: 2px solid rgb(0, 179, 255);
+      align-content: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .title {
+      position: absolute;
+    }
+    .divimage {
+      height: 300px;
+      width: 300px;
+      border-radius: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: border-radius 1.5s ease-in;
+      transition: box-shadow 0.5s ease-in-out;
+    }
+    #quotes {
+      position: absolute;
+    }
+    #author {
+      position: absolute;
+      top: 75%;
+    }
+    .divimage:hover {
+      border-radius: 15px;
+      box-shadow: rgb(2, 244, 236) 0px 20px 30px -10px;
+    }
+    .buttons {
+      height: 40px;
+      width: 150px;
+      border-radius: 15px;
+      position: absolute;
+      align-self: flex-end;
+      margin-bottom: 10px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: black;
+      background-color: rgb(9, 250, 190);
+    }
+    header {
+      position: absolute;
+      height: 100px;
+      width: 400px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header p {
+      position: absolute;
+      left: 45%;
+      top: 10px;
+    }
+    header h1 {
+      display: flex;
+
+      font-size: 2.5rem;
+      position: absolute;
+      left: 10%;
+      height: 50px;
+      width: 400px;
+    }
+    footer {
+      align-content: center;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      height: 100px;
+      width: 100%;
+      top: 90%;
+    }
+    marquee {
+      position: absolute;
+    }
+    marquee .name {
+      position: absolute;
+      font-size: larger;
+    }
+    marquee .footerbtn {
+      position: absolute;
+      top: 60px;
+      display: flex;
+      gap: 30px;
+      width: 100%;
+    }
+    .footerbtn .btnfoot {
+      height: 30px;
+      width: 100px;
+      border-radius: 15px;
+      background-color: rgb(9, 250, 190);
+      color: black;
+      font-size: larger;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .titlecenter {
+      color: aqua;
+      font-size: 1.5rem;
+      text-shadow: -11px 10px 10px rgba(128, 0, 0, 1),
+        4px 11px 23px rgba(85, 108, 81, 1);
+      font-weight: bold;
+    }
+    #displayname {
+      font-weight: bold;
+      color: aqua;
+      font-size: 1.5rem;
+      text-shadow: -11px 10px 10px rgb(7, 7, 7), 4px 11px 23px rgb(12, 12, 12);
+    }
+    #marqimg {
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      top: 35%;
+      left: 80%;
+    }
+  </style>
+  <body>
+    <video src="codesnapPic/gojo.mp4" autoplay loop playsinline muted></video>
+    <header>
+      <p>Activity #1</p>
+      <h1>Random Generator</h1>
+    </header>
+    <div class="box">
+      <h1 class="title">dogs</h1>
+      <div class="divimage">
+        <p class="titlecenter" id="dogs">Generate Doggy</p>
+      </div>
+      <button class="buttons" id="btn1" onclick="generate()">Click here</button>
+    </div>
+    <div class="box">
+      <h1 class="title">Cats</h1>
+      <div class="divimage">
+        <p class="titlecenter" id="cats">Generate Pussycats</p>
+      </div>
+      <button class="buttons" id="btn2" onclick="catsfunction()">
+        Click here
+      </button>
+    </div>
+    <div class="box">
+      <h1 class="title">Quotes</h1>
+      <div class="divimage">
+        <p class="titlecenter" id="quotes">Generate quotes</p>
+        <p id="author"></p>
+      </div>
+
+      <button class="buttons" id="btn3" onclick="quotesgenerate()">
+        Click here
+      </button>
+    </div>
+    <footer>
+      <marquee behavior="" direction="left" height="90px" width="90%"
+        ><div class="name">
+          <p id="displayname">SUBMITTED BY:IQUEN MARBA BSIT - 2D</p>
+          <img
+            id="marqimg"
+            src="https://media.tenor.com/lKfFq47N6LYAAAAj/gojo-yuji-transparent-gojo.gif"
+            alt=""
+          />
+        </div>
+        <div class="footerbtn">
+          <button class="btnfoot" id="btnf1">1</button>
+          <button class="btnfoot" id="btnf2">2</button>
+          <button class="btnfoot" id="btnf3">3</button>
+        </div></marquee
+      >
+    </footer>
+  </body>
+  <script>
+    let dogsimage = document.getElementById("dogs");
+    let btn1 = document.getElementById("btn1");
+    let catsimage = document.getElementById("cats");
+    let btn2 = document.getElementById("btn2");
+
+    let quotess = document.getElementById("quotes");
+    let author = document.getElementById("author");
+    let btn3 = document.getElementById("btn3");
+
+    let video = document.querySelector("video");
+
+    function catsfunction() {
+      fetch("https://api.thecatapi.com/v1/images/search")
+        .then((Response) => Response.json())
+        .then((datacats) => {
+          catsimage.innerHTML = `<image src="${datacats[0].url}"height=300px width= 300px/>`;
+        });
+      video.src = "codesnapPic/sakuna.mp4";
+    }
+    function generate() {
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then((Response) => Response.json())
+        .then((datadogs) => {
+          dogsimage.innerHTML = `<image src="${datadogs.message}"  height=300px width= 300px />`;
+        });
+      video.src = "codesnapPic/gojo.mp4";
+    }
+
+    function quotesgenerate() {
+      fetch("https://api.quotable.io/random")
+        .then((Response) => Response.json())
+        .then((quoted) => {
+          quotess.innerHTML = quoted.content;
+          quotess.setAttribute("style", "width: 250px;", "font-size:1.5rem;");
+          author.innerHTML = quoted.author;
+          author.setAttribute(
+            "style",
+            "width: 250px;",
+            "align-self: center;",
+            "position: absolute;"
+          );
+        });
+      video.src = "codesnapPic/gojo.mp4";
+    }
+
+    let btnf1 = document.querySelector("#btnf1");
+    let btnf2 = document.querySelector("#btnf2");
+    let btnf3 = document.querySelector("#btnf3");
+    let displayname = document.querySelector("#displayname");
+
+    btnf1.addEventListener("click", one);
+    function one() {
+      displayname.innerHTML =
+        "SUBMITTED BY:IQUEN MARBA BSIT - 2D so much " +
+        `<a id="pic" href="https://www.facebook.com/iquen.marba.7/"><img id="profile" src="codesnapPic/pp.jpg" height="40px"width="40px" /></a>`;
+    }
+    btnf2.addEventListener("click", two);
+
+    function two() {
+      displayname.innerHTML = "SUBMITTED BY:IQUEN MARBA BSIT - 2D mwah";
+    }
+    let listrandom = ["25%", "35%", "45%", "55%", "65%", "75%", "85%"];
+    btnf3.addEventListener("mouseover", three);
+    btnf3.addEventListener("click", three);
+    function three() {
+      let random = parseInt(Math.random() * listrandom.length);
+      btnf3.style.position = "absolute";
+      btnf3.style.left = listrandom[random];
+    }
+  </script>
+</html>
